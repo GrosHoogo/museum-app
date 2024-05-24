@@ -5,24 +5,23 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
+}
+
+.logo-img {
+    width: 100px; /* Ajustez la largeur selon vos besoins */
+    height: auto; /* Pour maintenir le ratio de l'image */
+}
+
+.nav-links {
     list-style-type: none;
     display: flex;
-  }
-  
-  .nav-links li {
+}
+
+.nav-links li {
     margin-right: 20px;
-  }
-  
-  .nav-links li a {
+}
+
+.nav-links li a {
     color: #fff;
     text-decoration: none;
-  }
-  
+}
