@@ -1,11 +1,5 @@
 # Interface des Artéfacts SupConnaissance
 
-## Vue d'ensemble du Projet
-
-En tant que membre de l'équipe de développement chez SupConnaissance, votre mission est de créer une interface impeccable pour notre base de données d'artéfacts et de collections d'art. Cette interface est essentielle pour les chercheurs et les universitaires afin d'accéder efficacement aux informations, et pour les utilisateurs pour explorer et en apprendre davantage sur les collections.
-
-Ce projet doit être réalisé par une équipe composée d'au plus deux membres. En cas de nombre impair de membres, un groupe de trois est autorisé. La portée de ce projet est uniquement axée sur le développement frontend. Les ensembles de données et l'API seront fournis par le MET (Musée).
-
 ## Fonctionnalités
 
 ### 1. Fonctionnalité de Recherche Rapide
