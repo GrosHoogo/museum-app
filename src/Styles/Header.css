@@ -1,0 +1,101 @@
+/* Import de la police Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+/* Définition des variables de couleur */
+:root {
+  --color: #333;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+/* Styles pour le conteneur principal */
+.container {
+  text-align: center;
+  color: var(--color);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1519120944692-1a8d8cfc107f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Styles pour les titres */
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+/* Styles pour les paragraphes */
+p {
+  max-width: 52ch;
+  line-height: 1.5;
+  padding: 1em;
+}
+
+/* Styles pour les liens */
+a {
+  display: inline-block;
+  padding: 1em 3.5em;
+  background-color: var(--color);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.3em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  font-size: .875rem;
+}
+
+/* Styles pour les éléments "blank" et "other" */
+.blank,
+.other {
+  width: 100%;
+  min-height: 60vh;
+  background-color: var(--color);
+}
+
+/* Nouveaux styles pour le conteneur des œuvres d'art */
+.artworks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* ou justify-content: space-between; */
+}
+
+
+/* Nouveaux styles pour chaque œuvre d'art */
+.artwork {
+    width: 25%; /* Réduction de la largeur de 20% */
+    flex: 1 1 calc(25% - 30px); /* Prend 25% de l'espace avec une marge de 15px sur les côtés */
+    background-color: white;
+    padding: 10px; /* Réduction de la taille de la boîte */
+    border-radius: 10px; /* Réduction du rayon du bord */
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles pour les images des œuvres d'art */
+  .artwork img {
+    width: 100%;
+    border-radius: 8px; /* Réduction du rayon du bord */
+    margin-bottom: 5px; /* Réduction de l'espacement sous l'image */
+  }
+  
+  /* Styles pour les titres des œuvres d'art */
+  .artwork h3 {
+    font-size: 1.25rem; /* Réduction de la taille de la police */
+    margin-bottom: 5px; /* Réduction de l'espacement sous le titre */
+  }
+  
+
+/* Styles pour les descriptions des œuvres d'art */
+.artwork p {
+  margin-bottom: 5px;
+}
