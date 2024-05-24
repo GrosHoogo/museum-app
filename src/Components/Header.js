@@ -7,7 +7,7 @@ function Header() {
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        const response1 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/437097');
+        const response1 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/435739');
         const response2 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/437098');
         const response3 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/437099');
 
@@ -41,13 +41,11 @@ function Header() {
           <div className="artwork" key={index}>
             <img src={artwork.primaryImage} alt={artwork.title} />
             <h3>{artwork.title}</h3>
-            <p>Date: {artwork.objectDate}</p>
-            <p>Artist: {artwork.artistDisplayName}</p>
+            <p><span className="label">Date:</span> <span className="value">{artwork.objectDate}</span></p>
+            <p><span className="label">Artist:</span> <span className="value">{artwork.artistDisplayName}</span></p>
           </div>
         ))}
       </div>
-
-      <div className="blank"></div>
     </div>
   );
 }
