@@ -1,5 +1,6 @@
 # Museum Site using API 
-![alt text](https://img.freepik.com/photos-gratuite/contexte-programmation-personne-travaillant-codes-ordinateur_23-2150010125.jpg?t=st=1716561034~exp=1716564634~hmac=018fac215f9a6a44e0ef8cf56d96283e13b7f27b3c48792daa4241e88e4829dc&w=996 "Test")
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/The_Metropolitan_Museum_of_Art_Logo.svg/1200px-The_Metropolitan_Museum_of_Art_Logo.svg.png "Met Museum")
+
 ## Fonctionnalités
 
 ### 1. Fonctionnalité de Recherche Rapide
@@ -38,4 +39,4 @@ Les contributions au projet sont les bienvenues ! Si vous avez des idées d'amé
 Ce projet est sous licence [MIT](LICENSE).
 
 ## Remerciements
-Un grand merci au Musée MET pour avoir fourni l'API et soutenu ce projet.
+Many thanks to the MET Museum for providing the API and supporting this project.
