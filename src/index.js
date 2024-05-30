@@ -1,17 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importez BrowserRouter, Routes et Route
 import './index.css';
 import Acceuil from './Pages/Page d\'acceuil';
+import About from './Pages/Page About';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <Acceuil />
-  </React.StrictMode>
+    <Router>
+      <Routes> {/* Enveloppez vos routes dans le composant <Routes> */}
+        <Route exact path="/" element={<Acceuil />} /> {/* Utilisez l'attribut "element" pour spécifier le composant */}
+        <Route path="/about" element={<About />} /> {/* Utilisez l'attribut "element" pour spécifier le composant */}
+      </Routes>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
-// Si vous souhaitez mesurer les performances de votre application, passez une fonction
-// pour enregistrer les résultats (par exemple : reportWebVitals(console.log))
-// ou envoyez-les à un point de terminaison d'analyse. En savoir plus : https://bit.ly/CRA-vitals
 reportWebVitals();

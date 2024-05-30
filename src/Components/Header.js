@@ -7,19 +7,33 @@ function Header() {
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        const response1 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/435739');
-        const response2 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/437098');
-        const response3 = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/437099');
-
-        if (!response1.ok || !response2.ok || !response3.ok) {
-          throw new Error('Failed to fetch artwork');
+        // Fetch list of available object IDs
+        const idsResponse = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects');
+        if (!idsResponse.ok) {
+          throw new Error('Failed to fetch artwork IDs');
         }
 
-        const data1 = await response1.json();
-        const data2 = await response2.json();
-        const data3 = await response3.json();
+        const idsData = await idsResponse.json();
+        const objectIDs = idsData.objectIDs;
 
-        setArtworks([data1, data2, data3]);
+        let artworksWithImages = [];
+        
+        while (artworksWithImages.length < 3) {
+          const randomIndex = Math.floor(Math.random() * objectIDs.length);
+          const randomID = objectIDs[randomIndex];
+          
+          const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomID}`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch artwork details');
+          }
+          
+          const data = await response.json();
+          if (data.primaryImage) {
+            artworksWithImages.push(data);
+          }
+        }
+
+        setArtworks(artworksWithImages);
       } catch (error) {
         console.error('Error fetching artwork:', error);
       }
