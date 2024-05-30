@@ -1,0 +1,64 @@
+/* SearchResults.css */
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Pour que les éléments s'espacent correctement */
+    gap: 30px;
+    padding: 30px;
+    margin-left: 70px; /* Ajout de marge à gauche */
+    margin-right: 70px; /* Ajout de marge à droite */
+}
+
+  
+  .result-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(25% - 20px); /* Pour afficher 4 éléments par ligne */
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ajout de l'ombre */
+  }
+  
+  .result-image {
+    width: 200px; /* Réduction de la largeur */
+    height: 400px; /* Augmentation de la hauteur */
+    border-radius: 10px;
+    object-fit: cover; /* Assure que l'image couvre complètement le conteneur */
+  }
+  
+  .result-info {
+    margin-top: 10px;
+    color: #333; /* Changement de la couleur du texte */
+  }
+  
+  .result-info h3 {
+    font-size: 1.2rem; /* Ajustement de la taille du titre */
+    margin-bottom: 4px;
+  }
+  
+  .result-info p {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+  }
+  
+  /* Mise en forme pour Date et Auteur */
+  .result-info .label {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.1rem;
+  }
+  
+  .result-info .value {
+    font-size: 1rem; /* Légèrement plus grand que la taille de la date et de l'auteur */
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .result-info .value.date {
+    font-size: 1.1rem; /* Ajustement de la taille de la date */
+  }
+  
+  .result-info .value.artist {
+    font-size: 1.1rem; /* Ajustement de la taille de l'auteur */
+  }
