@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importez BrowserRouter, Routes et Route
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import Acceuil from './Pages/Page d\'acceuil';
 import About from './Pages/Page About';
+import Contact from './Pages/Page Contact';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Routes> {/* Enveloppez vos routes dans le composant <Routes> */}
-        <Route exact path="/" element={<Acceuil />} /> {/* Utilisez l'attribut "element" pour spécifier le composant */}
-        <Route path="/about" element={<About />} /> {/* Utilisez l'attribut "element" pour spécifier le composant */}
+      <Routes>
+        <Route exact path="/" element={<Acceuil />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   </React.StrictMode>,

@@ -1,3 +1,5 @@
+// Header.js
+
 import React, { useState, useEffect } from 'react';
 import '../Styles/Header.css';
 
@@ -43,11 +45,11 @@ function Header() {
   }, []);
 
   return (
-    <div>
+    <div style={{ marginBottom: '30px' }}> {/* Ajout de la marge de 30px en bas */}
       <div className="container">
         <h1>Met Museum</h1>
         <p>The Metropolitan Museum of Art Collection API.</p>
-        <a href="#">Learn more</a>
+        <a href="/About">Learn more</a>
       </div>
 
       <div className="artworks-container">

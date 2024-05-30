@@ -7,7 +7,9 @@ import '../Styles/Navbar.css';
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <img src={logoImg} alt="Logo" className="logo-img" />
+      <Link to="/" className="logo-img-link">
+        <img src={logoImg} alt="Logo" className="logo-img" />
+      </Link>
       <div className="search-container">
         <input type="text" placeholder="Search..." className="search-bar" />
         <button className="search-button">
@@ -15,9 +17,9 @@ const Navbar = () => {
         </button>
       </div>
       <ul className="nav-links">
-        <li><a href="/">Accueil</a></li> {/* Lien vers la page d'accueil */}
-        <li><a href="/about">À propos</a></li> {/* Lien vers la page "À Propos" */}
-        <li><a href="#">Contact</a></li>
+        <li><Link to="/">Accueil</Link></li> {/* Lien vers la page d'accueil */}
+        <li><Link to="/about">À propos</Link></li> {/* Lien vers la page "À Propos" */}
+        <li><Link to="/contact">Contact</Link></li> {/* Lien vers la page "Contact" */}
         <li><a href="#">Search</a></li>
       </ul>
     </nav>
