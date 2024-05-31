@@ -1,64 +1,162 @@
 /* SearchResults.css */
 
-.search-results {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Pour que les éléments s'espacent correctement */
-    gap: 30px;
-    padding: 30px;
-    margin-left: 70px; /* Ajout de marge à gauche */
-    margin-right: 70px; /* Ajout de marge à droite */
+/* Styles pour la checkbox et le texte */
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-  
-  .result-card {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 10px;
-    width: calc(25% - 20px); /* Pour afficher 4 éléments par ligne */
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ajout de l'ombre */
+.checkbox input {
+  margin-right: 8px;
+}
+
+.checkbox svg,
+.checkbox .lines {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--active);
+  stroke-width: 2px;
+}
+
+.checkbox .lines {
+  stroke-width: 1.25px;
+}
+
+/* Texte "Only Image" */
+span[style="font-weight: bold; margin-left: 8px;"] {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* Styles pour les résultats */
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.result-card {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(25% - 20px);
+  text-align: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-image {
+  width: 100%; 
+  height: 500px; /* Hauteur de 500px */
+  border-radius: 10px;
+  object-fit: cover; /* Assure que l'image couvre complètement le conteneur */
+  display: block; /* Pour s'assurer que l'image est un bloc */
+  margin: 0 auto; /* Centrer l'image */
+}
+
+.result-info {
+  margin-top: 10px;
+  color: #333;
+}
+
+.result-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.result-info .date,
+.result-info .artist {
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.result-info .label {
+  font-weight: bold;
+  font-size: 1.1rem; /* Augmenter légèrement la taille */
+  text-decoration: underline; /* Souligner le texte */
+  margin-right: 5px; /* Ajouter un espace après le label */
+}
+
+/* Styles pour la checkbox */
+.checkbox {
+  --border-default: #bbbbc1;
+  --border-hover: #9898a3;
+  --active: #6E7BF2;
+  --active-tick: #ffffff;
+  display: block;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.checkbox svg {
+  display: block;
+  position: absolute;
+}
+
+.checkbox input {
+  display: block;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 36% / 36%;
+  box-shadow: inset 0 0 0 1.5px var(--border, var(--border-default));
+  background: var(--background, transparent);
+  transition: background .25s linear, box-shadow .25s linear;
+}
+
+.checkbox input + svg {
+  width: 21px;
+  height: 18px;
+  left: 0;
+  top: 0;
+  color: var(--active);
+}
+
+.checkbox input + svg + svg {
+  width: 11px;
+  height: 11px;
+  fill: none;
+  stroke: var(--active);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  top: -6px;
+  right: -10px;
+  stroke-dasharray: 4.5px;
+  stroke-dashoffset: 13.5px;
+  pointer-events: none;
+  animation: var(--animation, none) .2s ease .175s;
+}
+
+.checkbox input:checked {
+  --background: var(--active);
+  --border: var(--active);
+}
+
+.checkbox input:checked + svg + svg {
+  --stroke-dashoffset: 0;
+}
+
+.checkbox:hover input:not(:checked) {
+  --border: var(--border-hover);
+}
+
+@keyframes check {
+  100% {
+    stroke-dashoffset: 4.5px;
   }
-  
-  .result-image {
-    width: 200px; /* Réduction de la largeur */
-    height: 400px; /* Augmentation de la hauteur */
-    border-radius: 10px;
-    object-fit: cover; /* Assure que l'image couvre complètement le conteneur */
-  }
-  
-  .result-info {
-    margin-top: 10px;
-    color: #333; /* Changement de la couleur du texte */
-  }
-  
-  .result-info h3 {
-    font-size: 1.2rem; /* Ajustement de la taille du titre */
-    margin-bottom: 4px;
-  }
-  
-  .result-info p {
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-  }
-  
-  /* Mise en forme pour Date et Auteur */
-  .result-info .label {
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1.1rem;
-  }
-  
-  .result-info .value {
-    font-size: 1rem; /* Légèrement plus grand que la taille de la date et de l'auteur */
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  
-  .result-info .value.date {
-    font-size: 1.1rem; /* Ajustement de la taille de la date */
-  }
-  
-  .result-info .value.artist {
-    font-size: 1.1rem; /* Ajustement de la taille de l'auteur */
-  }
+}

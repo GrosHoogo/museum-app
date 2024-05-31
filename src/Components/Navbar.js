@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Importez useNavigate depuis React Router
+import { Link, useNavigate } from 'react-router-dom';
 import logoImg from '../Assets/museum-logo.png';
 import searchIcon from '../Assets/search-icon.png';
 import '../Styles/Navbar.css';

@@ -4,50 +4,47 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px; /* Réduire le padding vertical */
+    padding: 5px 20px;
 }
 
 .logo-img {
-    width: 80px; /* Ajustez la largeur selon vos besoins */
-    height: auto; /* Pour maintenir le ratio de l'image */
+    width: 80px;
+    height: auto;
 }
 
 .search-container {
     display: flex;
     align-items: center;
-    position: relative; /* Ajout de position relative */
+}
+
+.search-container form {
+    display: flex; /* Ajout de display flex */
 }
 
 .search-bar {
-    flex: 1; /* Utilise l'espace disponible */
-    padding: 5px 10px; /* Réduire le padding interne */
-    border-radius: 10px 0 0 10px; /* Pour les bords arrondis à gauche */
+    padding: 5px 10px;
+    border-radius: 10px 0 0 10px;
     border: 1px solid #ccc;
     outline: none;
-    height: 30px; /* Pour correspondre à la hauteur du bouton de recherche */
-    width: 500px; /* Augmenter la largeur de la barre de recherche */
+    height: 30px;
+    width: 500px;
 }
 
-
 .search-button {
-    padding: 5px 10px; /* Réduire le padding interne */
-    border-radius: 0 10px 10px 0; /* Pour les bords arrondis à droite */
+    padding: 5px 10px;
+    border-radius: 0 10px 10px 0;
     border: 1px solid #ccc;
     border-left: none;
     background-color: #555;
     cursor: pointer;
-    height: 35px; /* Pour correspondre à la hauteur de la barre de recherche */
+    height: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute; /* Position absolue pour se superposer sur la barre de recherche */
-    right: 0; /* Alignement sur la droite */
-    top: 50%; /* Alignement vertical au milieu */
-    transform: translateY(-50%); /* Ajustement de la position verticale */
 }
 
 .search-icon {
-    width: 16px; /* Ajustez la taille de l'icône selon vos besoins */
+    width: 16px;
     height: 16px;
 }
 
@@ -59,7 +56,7 @@
 }
 
 .nav-links li {
-    margin-right: 15px; /* Réduire l'espace entre les éléments du menu */
+    margin-right: 15px;
 }
 
 .nav-links li a {
