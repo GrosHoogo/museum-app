@@ -38,7 +38,7 @@ const Navbar = () => {
         <li><Link to="/">Accueil</Link></li>
         <li><Link to="/about">À propos</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/search">Search</Link></li>
+        <li><Link to="/searchmenu">Search</Link></li>
       </ul>
     </nav>
   );

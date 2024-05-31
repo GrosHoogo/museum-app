@@ -7,6 +7,7 @@ import Acceuil from './Pages/Page d\'acceuil';
 import About from './Pages/Page About';
 import Contact from './Pages/Page Contact';
 import SearchResultsPage from './Pages/Page SearchResults'; 
+import SearchMenu from './Pages/Page SearchMenu';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/search" element={<SearchResultsPage />} /> {/* Nouvelle route */}
+        <Route path="/searchmenu" element={<SearchMenu />} />
         <Route path="/*" element={<App />} />
       </Routes>
     </Router>
