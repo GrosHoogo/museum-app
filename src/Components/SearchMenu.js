@@ -5,24 +5,25 @@ import '../Styles/SearchMenu.css';
 const SearchComponent = () => {
   const [query, setQuery] = useState('');
   const [searchBy, setSearchBy] = useState({
-    year: '',
-    department: '',
-    title: '',
-    period: '',
-    city: '',
-    artist: '',
+    year: false,
+    department: false,
+    title: false,
+    period: false,
+    city: false,
+    artist: false,
   });
 
   const navigate = useNavigate();
 
   const handleSearch = () => {
     const searchParams = new URLSearchParams();
+    searchParams.append('query', query);
     Object.keys(searchBy).forEach(key => {
       if (searchBy[key]) {
-        searchParams.append(key, searchBy[key]);
+        searchParams.append(key, query); // Ajout de la valeur de la recherche dans les paramètres de l'URL
       }
     });
-    searchParams.append('query', query);
+
     navigate(`/search?${searchParams.toString()}`);
   };
 
@@ -35,7 +36,7 @@ const SearchComponent = () => {
   const handleCheckboxChange = (event) => {
     setSearchBy({
       ...searchBy,
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.checked,
     });
   };
 
@@ -58,13 +59,13 @@ const SearchComponent = () => {
         {['year', 'department', 'title', 'period', 'city', 'artist'].map((key) => (
           <label key={key} className="checkbox-label2">
             <input
-              type="text"
+              type="checkbox"
               name={key}
-              value={searchBy[key]}
+              checked={searchBy[key]}
               onChange={handleCheckboxChange}
-              placeholder={`Enter ${key}`}
               className="checkbox-input2"
             />
+            {key.charAt(0).toUpperCase() + key.slice(1)}
           </label>
         ))}
       </div>
