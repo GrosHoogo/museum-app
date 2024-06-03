@@ -4,41 +4,50 @@ import '../Styles/SearchResults.css';
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
-  const [showOnlyImages, setShowOnlyImages] = useState(false); // Ajout de l'état
   const location = useLocation();
-  const query = new URLSearchParams(location.search).get('query');
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get('query');
+  const filters = {
+    year: searchParams.get('year'),
+    department: searchParams.get('department'),
+    title: searchParams.get('title'),
+    period: searchParams.get('period'),
+    city: searchParams.get('city'),
+    artist: searchParams.get('artist'),
+  };
 
   useEffect(() => {
-    if (query) {
-      fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.objectIDs) {
-            const fetchObjects = data.objectIDs.slice(0, 10).map((id) =>
-              fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`)
-                .then((response) => response.json())
-            );
-            Promise.all(fetchObjects).then((objects) => setResults(objects));
-          }
-        });
-    }
-  }, [query]);
+    const fetchResults = async () => {
+      let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`;
+      
+      if (filters.year) {
+        url += `&dateBegin=${filters.year}&dateEnd=${filters.year}`;
+      }
+      if (filters.department) {
+        url += `&departmentId=${filters.department}`;
+      }
+      // Add more filters as needed
 
-  // Filtrer les résultats en fonction de l'état de la case à cocher
-  const filteredResults = showOnlyImages ? results.filter(item => item.primaryImageSmall) : results;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.objectIDs) {
+        const fetchObjects = data.objectIDs.slice(0, 10).map((id) =>
+          fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`)
+            .then((response) => response.json())
+        );
+        const objects = await Promise.all(fetchObjects);
+        setResults(objects);
+      }
+    };
+
+    fetchResults();
+  }, [query, filters]);
 
   return (
     <div className="search-results">
-      <label className="image-checkbox">
-        <input
-          type="checkbox"
-          checked={showOnlyImages}
-          onChange={(e) => setShowOnlyImages(e.target.checked)}
-        />
-        Afficher uniquement les images
-      </label>
-      {filteredResults.length > 0 ? (
-        filteredResults.map((item) => (
+      {results.length > 0 ? (
+        results.map((item) => (
           <div key={item.objectID} className="result-card">
             <img src={item.primaryImageSmall} alt={item.title} className="result-image" />
             <div className="result-info">

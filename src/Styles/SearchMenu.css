@@ -1,69 +1,87 @@
 .search-container1 {
-    height: 120vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://img.freepik.com/photos-gratuite/plan-interieur-musees-cite-du-vatican_181624-12883.jpg?t=st=1717193520~exp=1717197120~hmac=1f341e037438c1050768489ec2e6b56b599ac1df32eda503bc96841856b6a868&w=1380'); /* URL de votre image de fond */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .search-container1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.5; /* Opacité de l'image de fond */
-  }
-  
-  .search-box1 {
-    position: relative;
-    z-index: 1; /* Pour que le contenu soit au-dessus du pseudo-élément avant */
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9); /* Légère transparence */
-    border-radius: 25px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 60%; /* Augmentation de la longueur de la barre de recherche */
-  }
-  
-  .search-input1 {
-    border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-    flex: 1;
-  }
-  
-  .search-button1 {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px; /* Ajustement du padding */
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* S'assurer que la hauteur du bouton correspond à celle de la barre de recherche */
-    flex-basis: 80px; /* Longueur du bouton de recherche */
-  }
-  
-  .search-button1:hover {
-    background-color: #0056b3;
-  }
-  
-  .search-icon {
-    height: 20px; /* Ajustement de la taille de l'image */
-    padding: 0; /* Pas de padding autour de l'image */
-  }
-  
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdn.sanity.io/images/cctd4ker/production/f14b1cd7cd359556864db06cabd95dd8ad8c7bfa-3840x2160.jpg?w=3840&q=75&fit=clip&auto=format'); /* URL de votre image de fond */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.search-container1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5; /* Opacité de l'image de fond */
+  z-index: -1; /* Assurez-vous que le pseudo-élément est derrière tout */
+}
+
+.search-box1 {
+  position: relative;
+  z-index: 1; /* Pour que le contenu soit au-dessus du pseudo-élément avant */
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Légère transparence */
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60%; /* Augmentation de la longueur de la barre de recherche */
+}
+
+.search-input1 {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 25px 0 0 25px;
+  font-size: 16px;
+  flex: 1;
+}
+
+.search-button1 {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px; /* Ajustement du padding */
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* S'assurer que la hauteur du bouton correspond à celle de la barre de recherche */
+  flex-basis: 80px; /* Longueur du bouton de recherche */
+}
+
+.search-button1:hover {
+  background-color: #0056b3;
+}
+
+.search-icon {
+  height: 20px; /* Ajustement de la taille de l'image */
+  padding: 0; /* Pas de padding autour de l'image */
+}
+
+.checkbox-container2 {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.checkbox-label2 {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.checkbox-input2 {
+  margin-right: 5px;
+}
