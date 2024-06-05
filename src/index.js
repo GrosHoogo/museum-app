@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route path="/" element={<Acceuil />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/search" element={<SearchResultsPage />} /> {/* Nouvelle route */}
+        <Route path="/search" element={<SearchResultsPage />} /> 
         <Route path="/searchmenu" element={<SearchMenu />} />
         <Route path="/*" element={<App />} />
       </Routes>

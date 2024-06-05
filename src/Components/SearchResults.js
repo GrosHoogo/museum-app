@@ -33,6 +33,19 @@ const SearchResults = () => {
       const objects = await Promise.all(fetchObjects);
 
       const filteredResults = objects.filter((item) => {
+        // Filtrer par date si le filtre date est activé et il y a une valeur de recherche
+        if (filters.year && query) {
+          return (
+            (item.objectDate && item.objectDate.includes(query)) &&
+            (!filters.department || (item.department && item.department.includes(filters.department))) &&
+            (!filters.title || (item.title && item.title.includes(filters.title))) &&
+            (!filters.period || (item.period && item.period.includes(filters.period))) &&
+            (!filters.city || (item.city && item.city.includes(filters.city))) &&
+            (!filters.artist || (item.artistDisplayName && item.artistDisplayName.includes(filters.artist)))
+          );
+        }
+
+        // Sinon, appliquer les filtres normalement
         return (
           (!filters.year || (item.objectDate && item.objectDate.includes(filters.year))) &&
           (!filters.department || (item.department && item.department.includes(filters.department))) &&
