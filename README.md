@@ -1,42 +1,33 @@
-# Museum Site using API 
-![alt text](https://www.metmuseum.org/-/media/images/perspectives/2023/5/collection-and-cultural-property/the-met-fifth-avenue_great-hall_photo-by-brett-beyer-2048x2048.jpg?h=2048&amp;iar=0&amp;mw=2400&amp;w=2048&amp;sc_lang=en&amp;hash=237EC5D65BFD251E1D1D7D59AAE1FC10 "Met Museum")
+Interface pour la Collection d'Art du MET
+Ce projet consiste en la création d'une interface frontend pour la collection d'art et d'artefacts du Metropolitan Museum of Art (MET). L'objectif est de fournir un moyen convivial et efficace aux chercheurs, universitaires et utilisateurs généraux de rechercher et d'explorer les collections du MET.
 
-## Fonctionnalités
+Installation
+	Clonez ce dépôt sur votre machine locale :
 
-### 1. Fonctionnalité de Recherche Rapide
-- Visible sur toutes les pages.
-- Permet aux utilisateurs de rechercher à travers tous les objets des collections.
+	git clone https://github.com/GrosHoogo/museum-app.git
+Accédez au répertoire du projet :
 
-### 2. Fonctionnalité de Recherche Avancée
-- Disponible sur une page spécifique.
-- Permet aux utilisateurs d'effectuer des requêtes très spécifiques en utilisant les paramètres définis dans la documentation de l'API (par exemple, département, date, tags).
+	cd projet-met-interface
+Installez les dépendances :
 
-### 3. Affichage des Articles Mis en Avant
-- Présenté sur la page principale/index.
-- Met en valeur certains articles mis en avant provenant de la recherche API.
+	npm install
+Exécution
+Lancez l'application en mode développement :
 
-### 4. Page d'Affichage d'Objet Spécifique
-- Les utilisateurs peuvent accéder à cette page via différents moyens tels que la barre de recherche, la recherche avancée ou d'autres options de navigation.
-- Affiche des informations détaillées sur un objet spécifique, y compris image, nom, département, période, auteur et autres données pertinentes.
-- Des informations supplémentaires utiles peuvent être incluses en fonction des critères de recherche ou de l'article.
+	npm start
+Ouvrez votre navigateur et accédez à l'URL suivante :
 
-### 5. Considérations en Matière d'UI/UX
-- Accent mis sur la création d'une interface utilisateur intuitive et visuellement attrayante.
-- Construction d'un site web responsive pour assurer la compatibilité avec différents appareils et tailles d'écran.
-
-## Informations
-
-### Ressources Additionnelles
-- [Spécification de l'API](https://metmuseum.github.io/)
-
-## Pour Commencer
-Pour commencer à travailler sur le projet, assurez-vous d'avoir accès à la documentation de l'API fournie pour référence. Collaborez efficacement avec votre équipe pour répartir les tâches et assurer une progression fluide tout au long du processus de développement.
-
-## Contribution
-Les contributions au projet sont les bienvenues ! Si vous avez des idées d'améliorations ou de nouvelles fonctionnalités, n'hésitez pas à les discuter avec l'équipe et à contribuer au succès du projet.
-
-## Licence
-Ce projet est sous licence [MIT](LICENSE).
-
-## Remerciements
-Many thanks to the MET Museum for providing the API and supporting this project.
+	http://localhost:3000
+Fonctionnalités
+Recherche Rapide
+	Une fonctionnalité de recherche rapide est disponible sur toutes les pages de l'interface. Elle permet aux utilisateurs de rechercher rapidement des objets dans les collections du MET.
+Recherche Avancée
+	Une fonctionnalité de recherche avancée est disponible sur une page dédiée. Elle permet aux utilisateurs d'effectuer des requêtes plus spécifiques en utilisant une liste complète de paramètres provenant de la documentation de 	l'API du MET.
+Page Principale / Index
+	La page principale affiche quelques articles en vedette provenant des collections du MET. Ces articles sont récupérés en utilisant l'API de recherche.
+Page d'Objet Spécifique
+	Une page est dédiée à l'affichage d'un objet spécifique. Les utilisateurs peuvent accéder à cette page via la barre de recherche, la recherche avancée ou d'autres moyens de navigation. Cette page affiche des informations détaillées sur l'objet telles que l'image, le nom, le département, la période, l'auteur, etc.
+Conception Globale
+	L'interface est conçue pour être réactive, offrant une expérience utilisateur optimale sur une variété d'appareils et de tailles d'écrans.
+Documentation de l'API
+	La spécification de l'API du MET est disponible à l'adresse suivante : https://metmuseum.github.io/

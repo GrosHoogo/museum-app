@@ -20,7 +20,7 @@ const SearchComponent = () => {
     searchParams.append('query', query);
     Object.keys(searchBy).forEach(key => {
       if (searchBy[key]) {
-        searchParams.append(key, query); // Ajout de la valeur de la recherche dans les paramètres de l'URL
+        searchParams.append('searchBy', key); // Utilisation de 'searchBy' comme paramètre pour indiquer le critère de recherche
       }
     });
 
